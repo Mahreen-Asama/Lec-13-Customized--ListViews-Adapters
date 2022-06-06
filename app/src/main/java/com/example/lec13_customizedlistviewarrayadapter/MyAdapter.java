@@ -1,7 +1,10 @@
 package com.example.lec13_customizedlistviewarrayadapter;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,13 +47,20 @@ public class MyAdapter extends ArrayAdapter<Student> {
         img.setImageResource(stu.getImage());
 
         //just to check which item is clicking
-        tv_name.setOnClickListener(new View.OnClickListener() {
+
+
+        convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("id: ",stu.getId());
                 //when click go to a new activity, to see details of this item
                 // aslo we can go to text activity, --> Qaida
-                Intent intent=new Intent(getContext(),MainActivity.class);
+                Intent intent=new Intent(getContext(),DetailActivity.class);
+                intent.putExtra("image",stu.getImage());
+                intent.putExtra("name",stu.getName());
+                intent.putExtra("id",stu.getId());
+                intent.putExtra("section",stu.getSection());
+                startActivity(getContext(),intent, Bundle.EMPTY);
             }
         });
 
