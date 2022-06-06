@@ -53,10 +53,11 @@ public class MyAdapter extends ArrayAdapter<Student> {
             @Override
             public void onClick(View view) {
                 Log.d("id: ",stu.getId());
+                Log.d("image: ",String.valueOf(stu.getImage()));
                 //when click go to a new activity, to see details of this item
                 // aslo we can go to text activity, --> Qaida
                 Intent intent=new Intent(getContext(),DetailActivity.class);
-                intent.putExtra("image",stu.getImage());
+                intent.putExtra("image",String.valueOf(stu.getImage()));
                 intent.putExtra("name",stu.getName());
                 intent.putExtra("id",stu.getId());
                 intent.putExtra("section",stu.getSection());
