@@ -10,3 +10,4 @@ customized list views and customized adapters, android studio
       <img src="https://user-images.githubusercontent.com/79749919/172579592-16de2500-b3f2-43aa-874e-8d225f8298ae.png">
     </td>
   </tr>
+</table>
